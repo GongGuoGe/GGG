@@ -51,13 +51,14 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"CountAddToList" sender:self];      }
+        [self.navigationController popViewControllerAnimated:TRUE];
+    }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"CountAddToList" sender:self];         
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
- 
+
 
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +78,7 @@
     
     //调用封装好的数据库插入函数
     if ([sqlSer insertTestList:sqlInsert]) {
-      [self performSegueWithIdentifier:@"CountAddToList" sender:self];       
+      [self.navigationController popViewControllerAnimated:TRUE];       
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"

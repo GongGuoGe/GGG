@@ -47,25 +47,25 @@ NSMutableArray* seedList;
     //绑定TableView
     _tables.delegate=self;
     _tables.dataSource=self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     SeedSQLService   *sqlSer = [[SeedSQLService alloc] init];
-    
-    
     seedList= [sqlSer getTestList];
-
+    [_tables reloadData];
 }
+
+
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
         [self performSegueWithIdentifier:@"seedSetNew" sender:self];
-        
-        
-        
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"seedSetToMain" sender:self];
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 

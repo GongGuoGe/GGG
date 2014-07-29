@@ -53,15 +53,10 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"newlogToList" sender:self];
-        
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"newlogToList" sender:self];
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
@@ -96,9 +91,5 @@
     [self performSegueWithIdentifier:@"newlogToList" sender:self];
 }
 
-
-- (IBAction)onBack:(id)sender {
-    [self performSegueWithIdentifier:@"newlogToList" sender:self];
-}
 
 @end

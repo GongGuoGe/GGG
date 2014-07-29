@@ -47,9 +47,10 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"seedseetNewToList" sender:self];      }
+        [self.navigationController popViewControllerAnimated:TRUE];
+    }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"seedseetNewToList" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
@@ -65,10 +66,7 @@
     sqlInsert.seedName = _seedName.text; 
     
     //调用封装好的数据库插入函数
-    if ([sqlSer insertTestList:sqlInsert]) {
-        [self performSegueWithIdentifier:@"seedseetNewToList" sender:self];
-    }
-    else {
+    if (![sqlSer insertTestList:sqlInsert]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
                                                         message:@"插入数据失败"
                                                        delegate:self
@@ -78,7 +76,7 @@
         
     }
     
-    [self performSegueWithIdentifier:@"seedseetNewToList" sender:self];
+    [self.navigationController popViewControllerAnimated:TRUE];
     
 }
 - (void)dealloc {

@@ -54,9 +54,9 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"SetMailBack" sender:self];      }
+        [self.navigationController popViewControllerAnimated:TRUE];      }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"SetMailBack" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 

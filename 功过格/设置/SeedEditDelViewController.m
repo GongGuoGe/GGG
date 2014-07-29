@@ -61,13 +61,13 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"backToSeedList" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
         
         
         
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"backToSeedList" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
         
         
     }
@@ -95,7 +95,7 @@
     [sqlSer deleteTestList:sqlInsert];
     [sqlSer release];
     
-    [self performSegueWithIdentifier:@"backToSeedList" sender:self];
+    [self.navigationController popViewControllerAnimated:TRUE];
     
 }
 
@@ -108,9 +108,8 @@
         sqlInsert.sqlid    = [param intValue];
     
     [sqlSer updateTestList:sqlInsert];
-    [self performSegueWithIdentifier:@"backToSeedList" sender:self];
     
-    
+    [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 - (IBAction)hiden:(id)sender {

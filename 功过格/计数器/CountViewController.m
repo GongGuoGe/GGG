@@ -93,13 +93,10 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"CountDetailToList" sender:self];
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"CountDetailToList" sender:self];
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 

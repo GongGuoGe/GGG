@@ -56,15 +56,10 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"bestToMain" sender:self];
-        
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"bestToMain" sender:self];
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
@@ -106,9 +101,5 @@
 
 }
 
-
-- (IBAction)onBack:(id)sender {
-    [self performSegueWithIdentifier:@"bestToMain" sender:self];
-}
 
 @end

@@ -60,16 +60,13 @@ NSMutableArray* counterList;
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-              [self performSegueWithIdentifier:@"toAddCountType" sender:self];
-
-        
-        
-            }
+        [self performSegueWithIdentifier:@"toAddCountType" sender:self];
+    }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"CountToSetMain" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
         
-
-                   }
+        
+    }
 }
 - (void)didReceiveMemoryWarning
 {

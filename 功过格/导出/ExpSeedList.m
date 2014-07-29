@@ -59,13 +59,13 @@ NSMutableArray* seedList;
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"ExpBackToMain" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
         
         
         
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"ExpBackToMain" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
         
         
     }

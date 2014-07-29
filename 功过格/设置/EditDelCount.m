@@ -93,7 +93,7 @@
     [sqlSer deleteTestList:sqlInsert];
     [sqlSer release];
     
-    [self performSegueWithIdentifier:@"editback" sender:self];
+    [self.navigationController popViewControllerAnimated:TRUE];
 
 }
 
@@ -108,7 +108,7 @@
     sqlInsert.sqlid    = [param intValue];
     
     [sqlSer updateTestList:sqlInsert];
-    [self performSegueWithIdentifier:@"editback" sender:self];
+    [self.navigationController popViewControllerAnimated:TRUE];
 
     
 }

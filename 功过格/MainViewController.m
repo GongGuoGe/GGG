@@ -38,6 +38,14 @@
     self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+    [backItem release];
+    
+//    self.navigationItem.leftBarButtonItem.title = @"返回";
+//    [self.navigationItem.leftBarButtonItem setTitle:@"返回"];
 }
 
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender

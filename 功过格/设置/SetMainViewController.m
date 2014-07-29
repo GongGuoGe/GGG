@@ -37,6 +37,13 @@
     self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:@"主页"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
+    
+    self.navigationItem.rightBarButtonItem = btnHome;
 }
 
 
@@ -45,9 +52,10 @@
 
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
+    
+    
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"setMainToMain" sender:self];
-        
+        [self.navigationController popViewControllerAnimated:TRUE];        
     }
     
 }
@@ -75,8 +83,9 @@
 }
 
 
-- (IBAction)onBack:(id)sender {
-    [self performSegueWithIdentifier:@"setMainToMain" sender:self];
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
 }
 
 @end

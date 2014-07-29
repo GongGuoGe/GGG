@@ -57,13 +57,10 @@ NSMutableArray* counterList;
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"countBackToMain" sender:self];         
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"countBackToMain" sender:self];
-        
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
