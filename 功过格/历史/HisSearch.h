@@ -14,7 +14,6 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 @property (strong, nonatomic) NSString *param;
 @property (strong, nonatomic) NSString *param2;
-@property (retain, nonatomic) IBOutlet UITableView *tablevies;
 @property (strong, nonatomic) NSString *right;
 @property (strong, nonatomic) NSString *wrong;
 @property (strong, nonatomic) NSString *will;

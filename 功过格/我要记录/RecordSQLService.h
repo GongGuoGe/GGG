@@ -32,14 +32,14 @@
 
 @interface sqlRecordList : NSObject
 {
-    NSInteger *sqlid;
+    int sqlid;
 	NSString *seedName;
     NSString *righttext;
     NSString *wrongtext;
     NSString *willtext;
     NSString *addtime;
 }
-@property (nonatomic) NSInteger *sqlid;
+@property (assign) int sqlid;
 @property (nonatomic, retain) NSString *seedName;
 @property (nonatomic, retain) NSString *righttext;
 @property (nonatomic, retain) NSString *wrongtext;

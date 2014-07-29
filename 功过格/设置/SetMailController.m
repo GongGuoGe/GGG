@@ -77,14 +77,12 @@
       [data setObject:_smtp.text forKey:@"smtp"];
     
     
-BOOL flag=[data writeToFile:plistPath atomically:NO]; 
+    BOOL flag=[data writeToFile:plistPath atomically:NO]; 
     
     
 }
 - (void)dealloc {
-    [_accout release];
-    [_passwd release];
-    [_smtp release];
+
     [super dealloc];
 }
 @end

@@ -12,9 +12,9 @@
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
-@property (retain, nonatomic) IBOutlet UITableView *tables;
-
-@property (retain, nonatomic) IBOutlet UITableView *tableViews;
+//@property (retain, nonatomic) IBOutlet UITableView *tables;
+//
+//@property (retain, nonatomic) IBOutlet UITableView *tableViews;
 @property (strong, nonatomic) NSString *paramname;
 @property (strong, nonatomic) NSString *param;
 

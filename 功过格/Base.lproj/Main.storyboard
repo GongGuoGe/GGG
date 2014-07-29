@@ -6,26 +6,6 @@
     </dependencies>
     <scenes>
         <!--New Log View Controller-->
-        <scene sceneID="TXe-Zy-RvY">
-            <objects>
-                <viewController id="6m9-nO-Tma" customClass="NewLogViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MrQ-ev-fOC"/>
-                        <viewControllerLayoutGuide type="bottom" id="AcG-2h-9vl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5HR-r6-RHe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vEI-FN-rBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="flL-SL-AAV"/>
-            </objects>
-            <point key="canvasLocation" x="-1109" y="-1989"/>
-        </scene>
-        <!--New Log View Controller-->
         <scene sceneID="dH4-0A-iWV">
             <objects>
                 <viewController id="ddM-wf-YUk" customClass="NewLogViewController" sceneMemberID="viewController">
@@ -106,7 +86,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq7-vq-yEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="dp0-mv-p5l"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-1807"/>
+            <point key="canvasLocation" x="-29" y="321"/>
         </scene>
         <!--Count View Controller-->
         <scene sceneID="nkW-AS-2VS">
@@ -143,7 +123,7 @@
                 <tapGestureRecognizer id="cQS-4f-eYX"/>
                 <swipeGestureRecognizer direction="right" id="yCg-gJ-lZ8"/>
             </objects>
-            <point key="canvasLocation" x="-1559" y="-452"/>
+            <point key="canvasLocation" x="-94" y="-360"/>
         </scene>
         <!--Count List View Controller-->
         <scene sceneID="QWB-8d-Zfd">
@@ -178,7 +158,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-953" y="-972"/>
+            <point key="canvasLocation" x="-515" y="-360"/>
         </scene>
         <!--Seed List View Controller-->
         <scene sceneID="W8m-V1-DjV">
@@ -216,7 +196,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="371" y="-1807"/>
+            <point key="canvasLocation" x="-521" y="321"/>
         </scene>
         <!--His Search-->
         <scene sceneID="My4-Mo-Qyh">
@@ -242,23 +222,16 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <connections>
-                        <outlet property="tablevies" destination="UlT-ge-guQ" id="321-sD-V7u"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyN-aE-IU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="g1U-Te-PAw">
                     <connections>
-                        <segue destination="uzy-wU-x3W" kind="modal" identifier="HisListToDetail" id="3L7-za-psl"/>
+                        <segue destination="uzy-wU-x3W" kind="push" identifier="HisListToDetail" id="3L7-za-psl"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="KJF-uw-Vp5">
-                    <connections>
-                        <segue destination="EIi-r5-oeu" kind="modal" identifier="HisListToHisMain" id="xfK-qR-8bd"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="KJF-uw-Vp5"/>
             </objects>
-            <point key="canvasLocation" x="-745" y="600"/>
+            <point key="canvasLocation" x="-13" y="-1239"/>
         </scene>
         <!--Show His-->
         <scene sceneID="j2g-xB-aaj">
@@ -343,13 +316,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRe-Ld-Nzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="4sE-bf-Fh7">
-                    <connections>
-                        <segue destination="Zpj-kg-DLC" kind="modal" identifier="DetailToHis" id="IHy-fo-v52"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="4sE-bf-Fh7"/>
             </objects>
-            <point key="canvasLocation" x="-1521" y="1090"/>
+            <point key="canvasLocation" x="483" y="-1239"/>
         </scene>
         <!--Select Date-->
         <scene sceneID="qtX-fn-tvt">
@@ -422,10 +391,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </timeZone>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpA-Hv-aNL">
-                                <rect key="frame" x="124" y="434" width="73" height="44"/>
+                                <rect key="frame" x="124" y="355" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="发送邮件">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -443,13 +412,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzE-5q-vEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="OZf-8I-bvX">
-                    <connections>
-                        <segue destination="GXL-A4-23W" kind="modal" identifier="SelectDateToList" id="ZVk-Y5-hn7"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="OZf-8I-bvX"/>
             </objects>
-            <point key="canvasLocation" x="-907" y="1812"/>
+            <point key="canvasLocation" x="189" y="-1880"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="rzt-sF-Rmz">
@@ -469,16 +434,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SET-Fh-OYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="KKQ-SD-nk6">
                     <connections>
-                        <segue destination="Zpj-kg-DLC" kind="modal" identifier="HistoryToTheDay" id="d8J-EV-c6Z"/>
+                        <segue destination="Zpj-kg-DLC" kind="push" identifier="HistoryToTheDay" id="d8J-EV-c6Z"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="KS8-jZ-Mvs">
-                    <connections>
-                        <segue destination="hNA-cX-PSd" kind="modal" identifier="historyToMain" modalTransitionStyle="flipHorizontal" id="42K-DD-Mcs"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="KS8-jZ-Mvs"/>
             </objects>
-            <point key="canvasLocation" x="-593" y="-275"/>
+            <point key="canvasLocation" x="-493" y="-1239"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -609,7 +570,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GXL-A4-23W" kind="modal" id="KcK-yA-lft"/>
+                                    <segue destination="GXL-A4-23W" kind="push" id="KcK-yA-lft"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXG-vr-Lsr">
@@ -632,7 +593,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="-468"/>
+            <point key="canvasLocation" x="-1763" y="-340"/>
         </scene>
         <!--Best View Controller-->
         <scene sceneID="TB9-hE-F0Z">
@@ -715,7 +676,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOS-hH-26R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="YY4-rX-zRc"/>
             </objects>
-            <point key="canvasLocation" x="1739" y="-614"/>
+            <point key="canvasLocation" x="-521" y="1526"/>
         </scene>
         <!--Today View Controller-->
         <scene sceneID="XQA-Ug-PYT">
@@ -726,7 +687,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdv-em-pJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="REH-gu-jRi"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="-1435"/>
+            <point key="canvasLocation" x="-521" y="893"/>
         </scene>
         <!--Set Main View Controller-->
         <scene sceneID="8m3-7v-d4d">
@@ -759,7 +720,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lL2-qE-dw9" kind="push" identifier="countBackToSet" id="NTt-2x-mIe"/>
+                                    <segue destination="lL2-qE-dw9" kind="push" id="myc-sc-bfV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="种子设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deB-w0-Tji">
@@ -802,14 +763,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCh-Ge-rWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Z0D-WV-JaI"/>
             </objects>
-            <point key="canvasLocation" x="2123" y="1973"/>
+            <point key="canvasLocation" x="-521" y="2101"/>
         </scene>
         <!--Exp Seed List-->
         <scene sceneID="odb-IK-yi8">
             <objects>
                 <tableViewController id="GXL-A4-23W" customClass="ExpSeedList" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gtq-Es-tis">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -830,18 +791,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <extendedEdge key="edgesForExtendedLayout"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnU-td-5uX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="Q9N-Ye-3tl">
-                    <connections>
-                        <segue destination="hNA-cX-PSd" kind="modal" identifier="ExpBackToMain" id="OQ1-ib-Kn6"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Q9N-Ye-3tl"/>
                 <swipeGestureRecognizer direction="right" id="DDM-nU-QGD">
                     <connections>
-                        <segue destination="NUv-gA-CwI" kind="modal" identifier="SeedListToSelect" id="ikl-tl-8v8"/>
+                        <segue destination="NUv-gA-CwI" kind="push" identifier="SeedListToSelect" id="ikl-tl-8v8"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-187" y="1148"/>
+            <point key="canvasLocation" x="-503" y="-1900"/>
         </scene>
         <!--Set Mail Controller-->
         <scene sceneID="pxE-4b-D9c">
@@ -918,7 +875,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSs-c6-jhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="VRu-0J-9db"/>
             </objects>
-            <point key="canvasLocation" x="3061" y="3320"/>
+            <point key="canvasLocation" x="561" y="3448"/>
         </scene>
         <!--Seed Set List View Controller-->
         <scene sceneID="snm-vr-gFj">
@@ -958,7 +915,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3052" y="2670"/>
+            <point key="canvasLocation" x="552" y="2798"/>
         </scene>
         <!--Seed Edit Del View Controller-->
         <scene sceneID="Bsm-04-wYm">
@@ -1023,7 +980,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmB-S2-WBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Iw1-g8-rGc"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="2904"/>
+            <point key="canvasLocation" x="1266" y="3032"/>
         </scene>
         <!--Seed Type New View Controller-->
         <scene sceneID="Q5T-5S-b4Y">
@@ -1075,7 +1032,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWJ-Xc-5HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="zRS-r9-rAl"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="2300"/>
+            <point key="canvasLocation" x="1266" y="2428"/>
         </scene>
         <!--Count Set List-->
         <scene sceneID="Wao-OH-5qs">
@@ -1091,10 +1048,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" id="saY-aR-rzb"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="tables" destination="UKU-yM-B6A" id="yg7-ep-8Hs"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nM1-VL-LVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="dTq-1r-uhy">
@@ -1110,7 +1065,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3061" y="1973"/>
+            <point key="canvasLocation" x="561" y="2101"/>
         </scene>
         <!--Edit Del Count-->
         <scene sceneID="Re6-Fo-Ts1">
@@ -1125,7 +1080,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-ZB-gRG">
-                                <rect key="frame" x="111" y="180" width="154" height="30"/>
+                                <rect key="frame" x="111" y="95" width="154" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1134,13 +1089,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIF-6a-9S7">
-                                <rect key="frame" x="111" y="237" width="97" height="30"/>
+                                <rect key="frame" x="111" y="152" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odU-vl-cmL">
-                                <rect key="frame" x="34" y="312" width="250" height="46"/>
+                                <rect key="frame" x="34" y="227" width="250" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="access.png">
@@ -1152,20 +1107,20 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="计数器类型" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGc-Kp-X5k">
-                                <rect key="frame" x="19" y="184" width="85" height="21"/>
+                                <rect key="frame" x="19" y="99" width="85" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="初始值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-PT-UzG">
-                                <rect key="frame" x="31" y="241" width="51" height="21"/>
+                                <rect key="frame" x="31" y="156" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udu-6z-tYI">
-                                <rect key="frame" x="34" y="381" width="249" height="44"/>
+                                <rect key="frame" x="34" y="296" width="249" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="del.png">
@@ -1192,7 +1147,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOd-FY-NRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="hTJ-MR-2dI"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="1121"/>
+            <point key="canvasLocation" x="1266" y="1249"/>
         </scene>
         <!--Count Add View Controller-->
         <scene sceneID="OTI-ur-wWM">
@@ -1207,7 +1162,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rhg-Ry-TSf">
-                                <rect key="frame" x="112" y="172" width="154" height="30"/>
+                                <rect key="frame" x="112" y="102" width="154" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1216,13 +1171,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbC-3T-i5x">
-                                <rect key="frame" x="112" y="229" width="97" height="30"/>
+                                <rect key="frame" x="112" y="159" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lys-z7-vJu">
-                                <rect key="frame" x="35" y="304" width="250" height="45"/>
+                                <rect key="frame" x="35" y="234" width="250" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="access.png">
@@ -1233,14 +1188,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="计数器类型" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1K-03-5Pk">
-                                <rect key="frame" x="20" y="176" width="85" height="21"/>
+                                <rect key="frame" x="20" y="106" width="85" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="初始值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-jz-XJP">
-                                <rect key="frame" x="32" y="233" width="51" height="21"/>
+                                <rect key="frame" x="32" y="163" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -1264,7 +1219,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3766" y="1717"/>
+            <point key="canvasLocation" x="1266" y="1845"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Wu-Us-jpX">
@@ -1282,7 +1237,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGN-20-Ejm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211" y="-468"/>
+            <point key="canvasLocation" x="-2289" y="-340"/>
         </scene>
     </scenes>
     <resources>
@@ -1304,10 +1259,4 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="KcK-yA-lft"/>
-        <segue reference="42K-DD-Mcs"/>
-        <segue reference="rI9-2S-FwV"/>
-        <segue reference="d8J-EV-c6Z"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -27,12 +27,12 @@ sqlite3  *_database;
 
 @interface sqlCountList : NSObject
 {
-    NSInteger *sqlid;
+    int sqlid;
 	NSString *countType;
-    NSString *countNum;
+    int countNum;
 }
-@property (nonatomic) NSInteger *sqlid;
+@property (nonatomic) int sqlid;
 @property (nonatomic, retain) NSString *countType;
-@property (nonatomic, retain) NSString *countNum;
+@property  int countNum;
 @end
 

@@ -174,7 +174,7 @@
                 sqlList.sqlid= sqlite3_column_int(statement,0);
                 NSLog(@"sdf%d",sqlList.sqlid);
 				sqlList.countType = [NSString stringWithUTF8String:strText];
-                sqlList.countNum = [NSString stringWithUTF8String:strText2];
+                sqlList.countNum = [[NSString stringWithUTF8String:strText2] intValue];
                 [array addObject:sqlList];
 				[sqlList release];
 			}
@@ -196,7 +196,7 @@
 		sqlite3_stmt *statement;
 		//组织SQL语句
 		char *sql = "update CountTable set countType = ?,countNum=?  WHERE ID = ?";
-		NSLog(updateList.countNum);
+		NSLog(@"%d", updateList.countNum);
 		//将SQL语句放入sqlite3_stmt中
 		int success = sqlite3_prepare_v2(_database, sql, -1, &statement, NULL);
 		if (success != SQLITE_OK) {
@@ -208,7 +208,7 @@
 		//这里的数字1，2，3代表第几个问号。这里只有1个问号，这是一个相对比较简单的数据库操作，真正的项目中会远远比这个复杂
 		//当掌握了原理后就不害怕复杂了
 		sqlite3_bind_text(statement, 1, [updateList.countType UTF8String], -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(statement, 2, [updateList.countNum UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int(statement, 2, updateList.countNum);
         sqlite3_bind_int(statement, 3, updateList.sqlid);
 		
 		//执行SQL语句。这里是更新数据库

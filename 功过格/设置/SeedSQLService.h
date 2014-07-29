@@ -27,10 +27,10 @@
 
 @interface sqlSeedList : NSObject
 {
-    NSInteger *sqlid;
+    int sqlid;
 	NSString *seedName; 
 }
-@property (nonatomic) NSInteger *sqlid;
+@property (assign) int sqlid;
 @property (nonatomic, retain) NSString *seedName; 
 @end
 

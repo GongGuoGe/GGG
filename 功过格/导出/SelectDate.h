@@ -10,7 +10,7 @@
 #import "SKPSMTPMessage.h"
 @interface SelectDate : UIViewController
 @property (strong, nonatomic) NSString *paramname;
-@property (strong, nonatomic) NSString *param;
+@property (assign) int param;
 - (IBAction)expevent:(id)sender;
 @property (retain, nonatomic) IBOutlet UIDatePicker *startdate;
 @property (retain, nonatomic) IBOutlet UIButton *exportbtn;

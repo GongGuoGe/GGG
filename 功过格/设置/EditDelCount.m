@@ -28,14 +28,9 @@
 
 - (void)viewDidLoad
 {
-    
-       if(param){
-        [_counttype setText:paramtype];
-        [_countnum setText:paramnum];
-        
-        
-        
-    }
+    [_counttype setText:paramtype];
+    [_countnum setText:[NSString stringWithFormat:@"%d", paramnum]];
+
     // 设置背景图片
     UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
@@ -62,9 +57,10 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self performSegueWithIdentifier:@"editback" sender:self];      }
+        [self.navigationController popViewControllerAnimated:TRUE];
+    }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self performSegueWithIdentifier:@"editback" sender:self];
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
@@ -77,8 +73,6 @@
 }
 
 - (void)dealloc {
-    [_counttype release];
-    [_countnum release];
     [super dealloc];
 }
 - (IBAction)HiddenKey:(id)sender {
@@ -87,8 +81,8 @@
 - (IBAction)del:(id)sender {
     CountSqlService   *sqlSer = [[CountSqlService alloc] init];
     sqlCountList *sqlInsert = [[sqlCountList alloc]init];
-    NSLog(param);
-    sqlInsert.sqlid    = [param intValue];
+    NSLog(@"%d", param);
+    sqlInsert.sqlid    = param;
     
     [sqlSer deleteTestList:sqlInsert];
     [sqlSer release];
@@ -103,9 +97,9 @@
 - (IBAction)update:(id)sender {
     CountSqlService   *sqlSer = [[CountSqlService alloc] init];
     sqlCountList *sqlInsert = [[sqlCountList alloc]init];
-    sqlInsert.countNum = _countnum.text;
+    sqlInsert.countNum = [_countnum.text intValue];
     sqlInsert.countType = _counttype.text;
-    sqlInsert.sqlid    = [param intValue];
+    sqlInsert.sqlid    = param;
     
     [sqlSer updateTestList:sqlInsert];
     [self.navigationController popViewControllerAnimated:TRUE];

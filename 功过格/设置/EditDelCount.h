@@ -10,10 +10,10 @@
 
 @interface EditDelCount : ViewController
 @property (strong, nonatomic) NSString *paramtype;
-@property (strong, nonatomic) NSString *paramnum;
-@property (retain, nonatomic) IBOutlet UITextField *counttype;
-@property (retain, nonatomic) IBOutlet UITextField *countnum;
-@property (strong, nonatomic) NSString *param;
+@property (assign) int paramnum;
+@property (assign, nonatomic) IBOutlet UITextField *counttype;
+@property (assign, nonatomic) IBOutlet UITextField *countnum;
+@property (assign) int param;
 - (IBAction)del:(id)sender;
 
 - (IBAction)hiden:(id)sender;

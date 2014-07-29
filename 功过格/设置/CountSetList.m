@@ -8,6 +8,9 @@
 
 #import "CountSetList.h"
 #import "CountSqlService.h"
+#import "EditDelCount.h"
+
+
 @interface CountSetList ()
 
 @end
@@ -45,17 +48,24 @@ NSMutableArray* counterList;
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
     
-    _tables.delegate=self;
-    _tables.dataSource=self;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     CountSqlService   *sqlSer = [[CountSqlService alloc] init];
-    
-    
     counterList= [sqlSer getTestList];
-
-  // NSLog(counterList.count);
+    
+    [self.tableView reloadData];
+    
+    param = -1;
 }
- 
+
+
 
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -86,7 +96,7 @@ NSMutableArray* counterList;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 { 
     // Return the number of rows in the section.
-    return 10;
+    return [counterList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -187,10 +197,7 @@ NSMutableArray* counterList;
     if(indexPath.row<counterList.count){
     sqlCountList *a=   [counterList objectAtIndex:indexPath.row];
    
-        
-    
-     NSString *str1 = [NSString stringWithFormat:@"%d",a.sqlid];
-    param=str1;
+    param=a.sqlid;
     paramnum=a.countNum;
     paramtype=a.countType;
      [self performSegueWithIdentifier:@"jump1" sender:self];
@@ -203,11 +210,11 @@ NSMutableArray* counterList;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if(param){
-        id segue2 = segue.destinationViewController;
-                [segue2 setValue:param forKey:@"param"];
-        [segue2 setValue:paramtype forKey:@"paramtype"];
-        [segue2 setValue:paramnum forKey:@"paramnum"];
+    if(param != -1){
+        EditDelCount* segue2 = segue.destinationViewController;
+        segue2.param = self.param;
+        segue2.paramtype = self.paramtype;
+        segue2.paramnum = paramnum;
     }
     
     
@@ -215,7 +222,6 @@ NSMutableArray* counterList;
 }
 
 - (void)dealloc {
-    [_tables release];
     [super dealloc];
 }
 @end

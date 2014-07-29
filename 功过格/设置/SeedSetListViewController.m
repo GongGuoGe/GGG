@@ -45,8 +45,11 @@ NSMutableArray* seedList;
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
     //绑定TableView
-    _tables.delegate=self;
-    _tables.dataSource=self;
+//    _tables.delegate=self;
+//    _tables.dataSource=self;
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,7 +58,18 @@ NSMutableArray* seedList;
     
     SeedSQLService   *sqlSer = [[SeedSQLService alloc] init];
     seedList= [sqlSer getTestList];
-    [_tables reloadData];
+    [self.tableView reloadData];
+    
+    if (param)
+    {
+        [param release];
+        param = nil;
+    }
+    if (paramname)
+    {
+        [paramname release];
+        paramname = nil;
+    }
 }
 
 
@@ -79,16 +93,14 @@ NSMutableArray* seedList;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 10;
+    return [seedList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,7 +165,6 @@ NSMutableArray* seedList;
 }
 
 - (void)dealloc {
-    [_tables release];
     [super dealloc];
 }
 @end

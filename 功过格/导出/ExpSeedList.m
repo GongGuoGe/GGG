@@ -8,6 +8,9 @@
 
 #import "ExpSeedList.h"
 #import "SeedSQLService.h"
+#import "SelectDate.h"
+
+
 @interface ExpSeedList ()
 
 @end
@@ -44,8 +47,8 @@ NSMutableArray* seedList;
     
     
     //绑定TableView
-    _tableview.delegate=self;
-    _tableview.dataSource=self;
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
     
     SeedSQLService   *sqlSer = [[SeedSQLService alloc] init];
     
@@ -53,6 +56,11 @@ NSMutableArray* seedList;
     seedList= [sqlSer getTestList];
     
     [sqlSer release];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    param = -1;
 }
 
 
@@ -81,16 +89,12 @@ NSMutableArray* seedList;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    return [seedList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -181,50 +185,44 @@ NSMutableArray* seedList;
         
         NSLog(@"jumpingtoEdddit");
         
-        NSString *str1 = [NSString stringWithFormat:@"%d",a.sqlid];
+//        NSString *str1 = [NSString stringWithFormat:@"%d",a.sqlid];
         
-        
-        param=str1;
+        param= a.sqlid;
         paramname=a.seedName;
         
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"mail" ofType:@"plist"];
         NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-        
 
-        
-      
        NSString *accout =[NSString stringWithFormat:@"%@",[data objectForKey:@"accout"]];
           NSString *passwd =[NSString stringWithFormat:@"%@",[data objectForKey:@"passwd"]];
           NSString *smtp =[NSString stringWithFormat:@"%@",[data objectForKey:@"smtp"]];
         
-        if(param){
-            if(accout.length>2&&passwd.length>2&&smtp.length>2){
+       
+        if(accout.length>2&&passwd.length>2&&smtp.length>2){
             
-                [self performSegueWithIdentifier:@"SeedListToSelect" sender:self];
-            }else{
+            [self performSegueWithIdentifier:@"SeedListToSelect" sender:self];
+        }else{
             
-                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"您没有设置用于发送备份文件的邮箱，请到设置内设置" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-                [alert show];
-                [alert release];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"您没有设置用于发送备份文件的邮箱，请到设置内设置" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
             
-                
-                param=str1;
-                paramname=a.seedName;
-            }
             
+            param = -1;
+            paramname = a.seedName;
         }
+        
+        
     }
     [UIView commitAnimations];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //
-    if(param){
-        if(param.length>0){
-            id segue2 = segue.destinationViewController;
-            [segue2 setValue:param forKey:@"param"];
-            [segue2 setValue:paramname forKey:@"paramname"];
-        }
+    if(param != -1){
+        SelectDate* segue2 = segue.destinationViewController;
+        segue2.param = param;
+        segue2.paramname = paramname;
     }
     
     
