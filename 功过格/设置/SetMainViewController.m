@@ -74,4 +74,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)onBack:(id)sender {
+    [self performSegueWithIdentifier:@"setMainToMain" sender:self];
+}
+
 @end

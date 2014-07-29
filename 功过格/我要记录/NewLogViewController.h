@@ -20,4 +20,6 @@
 - (IBAction)submit:(id)sender;
 @property (retain, nonatomic) IBOutlet UITextView *righttext;
 - (IBAction)hiden:(id)sender;
+
+- (IBAction)onBack:(id)sender;
 @end

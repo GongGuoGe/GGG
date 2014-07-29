@@ -17,4 +17,5 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 - (IBAction)hiden:(id)sender;
+- (IBAction)onBack:(id)sender;
 @end

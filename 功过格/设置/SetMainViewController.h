@@ -11,4 +11,5 @@
 @interface SetMainViewController : ViewController
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 
+- (IBAction)onBack:(id)sender;
 @end

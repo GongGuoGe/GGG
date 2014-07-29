@@ -95,4 +95,10 @@
    [sqlSer insertTestList:sqlInsert];
     [self performSegueWithIdentifier:@"newlogToList" sender:self];
 }
+
+
+- (IBAction)onBack:(id)sender {
+    [self performSegueWithIdentifier:@"newlogToList" sender:self];
+}
+
 @end

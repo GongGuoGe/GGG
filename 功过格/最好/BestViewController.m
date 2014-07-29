@@ -105,4 +105,10 @@
     }
 
 }
+
+
+- (IBAction)onBack:(id)sender {
+    [self performSegueWithIdentifier:@"bestToMain" sender:self];
+}
+
 @end
