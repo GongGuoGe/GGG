@@ -1,0 +1,23 @@
+//
+//  NewLogViewController.h
+//  功过格
+//
+//  Created by Apple on 14-2-14.
+//  Copyright (c) 2014年 powerplayer. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface NewLogViewController : ViewController
+@property (strong, nonatomic) NSString *paramname;
+@property (strong, nonatomic) NSString *param;
+@property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
+@property (retain, nonatomic) IBOutlet UITextView *wrongtext;
+
+@property (retain, nonatomic) IBOutlet UITextView *willtext;
+@property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
+
+- (IBAction)submit:(id)sender;
+@property (retain, nonatomic) IBOutlet UITextView *righttext;
+- (IBAction)hiden:(id)sender;
+@end
