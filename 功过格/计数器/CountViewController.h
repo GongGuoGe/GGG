@@ -11,11 +11,11 @@
 @interface CountViewController : ViewController
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
-@property (retain, nonatomic) IBOutlet UITapGestureRecognizer *Taped;
+@property (assign, nonatomic) IBOutlet UITapGestureRecognizer *Taped;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 @property (strong, nonatomic) NSString *paramtype;
-@property (strong, nonatomic) NSString *paramnum;
-@property (retain, nonatomic) IBOutlet UILabel *num;
-@property (strong, nonatomic) NSString *param;
+@property (assign) int paramnum;
+@property (assign, nonatomic) IBOutlet UILabel *num;
+@property (assign) int param;
 - (IBAction)click:(id)sender;
 @end

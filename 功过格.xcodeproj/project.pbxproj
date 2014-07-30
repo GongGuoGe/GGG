@@ -155,6 +155,8 @@
 		5382E0E318B71BF000E8F480 /* PMPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382E0DB18B71BF000E8F480 /* PMPeriod.m */; };
 		5382E0E418B71BF000E8F480 /* PMSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382E0DD18B71BF000E8F480 /* PMSelectionView.m */; };
 		538961DB18B1D4E700AC2CC4 /* RecordSQLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 538961DA18B1D4E700AC2CC4 /* RecordSQLService.m */; };
+		71A384C719889A1400444ABD /* UINavC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A384C619889A1400444ABD /* UINavC.m */; };
+		71A384CA1988D6A500444ABD /* NALLabelsMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A384C91988D6A500444ABD /* NALLabelsMatrix.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +318,10 @@
 		5382E0DD18B71BF000E8F480 /* PMSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSelectionView.m; sourceTree = "<group>"; };
 		538961D918B1D4E700AC2CC4 /* RecordSQLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSQLService.h; sourceTree = "<group>"; };
 		538961DA18B1D4E700AC2CC4 /* RecordSQLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSQLService.m; sourceTree = "<group>"; };
+		71A384C519889A1400444ABD /* UINavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UINavC.h; path = "功过格/UINavC.h"; sourceTree = "<group>"; };
+		71A384C619889A1400444ABD /* UINavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINavC.m; path = "功过格/UINavC.m"; sourceTree = "<group>"; };
+		71A384C81988D6A500444ABD /* NALLabelsMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NALLabelsMatrix.h; sourceTree = "<group>"; };
+		71A384C91988D6A500444ABD /* NALLabelsMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NALLabelsMatrix.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +355,8 @@
 				18C0C2F218B0E00300307981 /* images */,
 				18C0C30F18B0E00300307981 /* MainViewController.h */,
 				18C0C31018B0E00300307981 /* MainViewController.m */,
+				71A384C519889A1400444ABD /* UINavC.h */,
+				71A384C619889A1400444ABD /* UINavC.m */,
 				18C0C2C318B0DF8400307981 /* 功过格 */,
 				18C0C2E218B0DF8400307981 /* 功过格Tests */,
 				18C0C2BC18B0DF8400307981 /* Frameworks */,
@@ -562,6 +570,8 @@
 		18C0C41B18B0E1F900307981 /* 今天 */ = {
 			isa = PBXGroup;
 			children = (
+				71A384C81988D6A500444ABD /* NALLabelsMatrix.h */,
+				71A384C91988D6A500444ABD /* NALLabelsMatrix.m */,
 				18C0C41C18B0E1F900307981 /* TodayViewController.h */,
 				18C0C41D18B0E1F900307981 /* TodayViewController.m */,
 				5339BE4B18B2FC1D00124336 /* DataGridComponent.h */,
@@ -804,6 +814,7 @@
 				5382E0BA18B6EE1800E8F480 /* HSK_CFUtilities.m in Sources */,
 				18C0C2CA18B0DF8400307981 /* main.m in Sources */,
 				18C0C44018B0E1F900307981 /* TodayViewController.m in Sources */,
+				71A384CA1988D6A500444ABD /* NALLabelsMatrix.m in Sources */,
 				18C0C44E18B0E1F900307981 /* VRGViewController.m in Sources */,
 				18C0C36818B0E0AF00307981 /* SeedSetListViewController.m in Sources */,
 				18C0C36218B0E0AF00307981 /* CountSqlService.m in Sources */,
@@ -822,6 +833,7 @@
 				5339BE4D18B2FC1D00124336 /* DataGridComponent.m in Sources */,
 				18C0C3FD18B0E18A00307981 /* SeedListViewController.m in Sources */,
 				18C0C44A18B0E1F900307981 /* UIView+convenience.m in Sources */,
+				71A384C719889A1400444ABD /* UINavC.m in Sources */,
 				18C0C45518B0E7FF00307981 /* testViewController.m in Sources */,
 				18C0C36018B0E0AF00307981 /* CountSetList.m in Sources */,
 				18C0C43018B0E1F900307981 /* CountViewController.m in Sources */,

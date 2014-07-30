@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     
     NSLog(@"editing");
     
@@ -44,11 +45,6 @@
     self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
-    
-    [super viewDidLoad];
-    
-    
-    
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -73,22 +69,18 @@
 }
 
 - (void)dealloc {
-    [_righttext release];
-    [_willtext release];
-    [_wrongtext release];
-    [_willtext release];
     [super dealloc];
 }
 - (IBAction)submit:(id)sender {
-    
     RecordSQLService   *sqlSer = [[RecordSQLService alloc] init];
     sqlRecordList *sqlInsert = [[sqlRecordList alloc]init];
     sqlInsert.righttext=_righttext.text;
     sqlInsert.wrongtext=_wrongtext.text;
     sqlInsert.willtext=_willtext.text;
-    sqlInsert.seedName=_param;
-   [sqlSer insertTestList:sqlInsert];
-    [self performSegueWithIdentifier:@"newlogToList" sender:self];
+    sqlInsert.seedName = _paramname;
+    [sqlSer insertTestList:sqlInsert];
+    
+    [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 

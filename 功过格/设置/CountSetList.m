@@ -59,6 +59,7 @@ NSMutableArray* counterList;
     
     CountSqlService   *sqlSer = [[CountSqlService alloc] init];
     counterList= [sqlSer getTestList];
+    [sqlSer release];
     
     [self.tableView reloadData];
     

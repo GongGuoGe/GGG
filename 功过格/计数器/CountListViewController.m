@@ -8,6 +8,8 @@
 
 #import "CountListViewController.h"
 #import "CountSqlService.h"
+#import "CountViewController.h"
+
 @interface CountListViewController ()
 
 @end
@@ -43,15 +45,18 @@ NSMutableArray* counterList;
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
-    _tables.delegate=self;
-    _tables.dataSource=self;
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    CountSqlService   *sqlSer = [[CountSqlService alloc] init];
-    
-    
+    CountSqlService *sqlSer = [[CountSqlService alloc] init];
     counterList= [sqlSer getTestList];
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [sqlSer release];
+    param = -1;
 }
 
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
@@ -74,16 +79,12 @@ NSMutableArray* counterList;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    return [counterList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,13 +121,10 @@ NSMutableArray* counterList;
     
     if(indexPath.row<counterList.count){
     sqlCountList *a=   [counterList objectAtIndex:indexPath.row];
-    
-    
-    
-    NSString *str1 = [NSString stringWithFormat:@"%d",a.sqlid];
-    param=str1;
-    paramnum=a.countNum;
-    paramtype=a.countType;
+
+    param = a.sqlid;
+    paramnum = a.countNum;
+    paramtype = a.countType;
     [self performSegueWithIdentifier:@"CountListToDetail" sender:self];
     [UIView commitAnimations];
     }
@@ -136,11 +134,11 @@ NSMutableArray* counterList;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if(param){
-        id segue2 = segue.destinationViewController;
-        [segue2 setValue:param forKey:@"param"];
-        [segue2 setValue:paramtype forKey:@"paramtype"];
-        [segue2 setValue:paramnum forKey:@"paramnum"];
+    if(param != -1){
+        CountViewController* segue2 = segue.destinationViewController;
+        segue2.param = param;
+        segue2.paramtype = paramtype;
+        segue2.paramnum = paramnum;
     }
     
     
@@ -148,7 +146,6 @@ NSMutableArray* counterList;
 }
 
 - (void)dealloc {
-    [_tables release];
     [super dealloc];
 }
 @end

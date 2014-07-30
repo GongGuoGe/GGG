@@ -33,6 +33,6 @@ sqlite3  *_database;
 }
 @property (nonatomic) int sqlid;
 @property (nonatomic, retain) NSString *countType;
-@property  int countNum;
+@property (assign) int countNum;
 @end
 

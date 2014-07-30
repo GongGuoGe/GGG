@@ -130,7 +130,7 @@
 		
 		//这里的数字1，2，3代表第几个问号，这里将两个值绑定到两个绑定变量
 		sqlite3_bind_text(statement, 1, [insertList.countType UTF8String], -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(statement, 2, [insertList.countNum UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int(statement, 2, insertList.countNum);
 		//执行插入语句
 		success2 = sqlite3_step(statement);
 		//释放statement
@@ -170,11 +170,10 @@
 			while (sqlite3_step(statement) == SQLITE_ROW) {
 				sqlCountList* sqlList = [[sqlCountList alloc] init] ;
 				char* strText   = (char*)sqlite3_column_text(statement, 1);
-                char* strText2   = (char*)sqlite3_column_text(statement, 2);
+                sqlList.countNum = sqlite3_column_int(statement, 2);
                 sqlList.sqlid= sqlite3_column_int(statement,0);
                 NSLog(@"sdf%d",sqlList.sqlid);
 				sqlList.countType = [NSString stringWithUTF8String:strText];
-                sqlList.countNum = [[NSString stringWithUTF8String:strText2] intValue];
                 [array addObject:sqlList];
 				[sqlList release];
 			}
@@ -310,18 +309,10 @@
  
 @synthesize countNum;
 @synthesize countType;
+@synthesize sqlid;
  
 -(void) dealloc
-{
-	if (countType != nil) {
-		[countType release];
-	}
-     
-    
-    if (countNum != nil) {
-		[countNum release];
-	}
-    
+{    
 	[super dealloc];
 };
 

@@ -7,8 +7,9 @@
 //
 
 #import "TodayViewController.h"
-#import "DataGridComponent.h"
 #import "RecordSQLService.h"
+#import "NALLabelsMatrix.h"
+
 @interface TodayViewController ()
 
 @end
@@ -16,14 +17,7 @@
 @implementation TodayViewController
 NSMutableArray* list;
 @synthesize rightSwipeGestureRecognizer,leftSwipeGestureRecognizer;
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (NSUInteger)supportedInterfaceOrientations
 {
@@ -37,67 +31,34 @@ NSMutableArray* list;
 }
 
 
-
-
 - (void)viewDidLoad
 {
- 
+    [super viewDidLoad];
+    
     RecordSQLService   *sqlSer = [[RecordSQLService alloc] init];
     sqlRecordList *sqlInsert = [[sqlRecordList alloc]init];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     //设定时间格式,这里可以设置成自己需要的格式
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    sqlInsert.addtime= [dateFormatter stringFromDate: [NSDate date]];
+    sqlInsert.addtime = [dateFormatter stringFromDate: [NSDate date]];
     
     list= [sqlSer  getThisDay:sqlInsert];
     [sqlSer release];
     [dateFormatter release];
     
-    
-    NSMutableArray *dates = [[NSMutableArray alloc] init];
-    
-    for (sqlRecordList  *one in list) {
-        NSMutableArray *tmp = [[NSMutableArray alloc] init];
+//    DataGridComponentDataSource* ds = [[DataGridComponentDataSource alloc] init];
+//    ds.columnWidth = [NSMutableArray arrayWithObjects:@"40", @"100", @"170", @"170", @"170", @"120", @"70", nil];
+//    ds.titles = [NSMutableArray arrayWithObjects:@"编号", @"类型", @"正面", @"负面", @"我要", @"时间", nil];
+//    ds.data = dates;
+//    
+//    CGRect bds = [nb bounds];
+//    DataGridComponent *grid = [[DataGridComponent alloc] initWithFrame:CGRectMake(0, bds.size.height, 500, 600 - bds.size.height) data:ds];
+//    [ds release];
+//    [self.view addSubview:grid];
+//    [grid release];
 
-        
-        [tmp addObject:[NSString stringWithFormat:@"%d",one.sqlid]];
-        [tmp addObject:one.seedName];
-        [tmp addObject:one.righttext];
-        [tmp addObject:one.wrongtext];
-        [tmp addObject:one.willtext];
-   
-        [tmp addObject:one.addtime];
-       
-        
-      
-        [dates addObject:tmp];
-    }
-    
-
-    
-    
-    
-    
-    
-        DataGridComponentDataSource *ds = [[DataGridComponentDataSource alloc] init];
-        ds.columnWidth = [NSArray arrayWithObjects:@"40", @"100", @"170", @"170", @"170", @"120", @"70", nil];
-        ds.titles = [NSArray arrayWithObjects:@"编号", @"类型", @"正面", @"负面", @"我要", @"时间", nil];
-    
-    ds.data=dates;
-    
-    
-    
-    
-    
-              DataGridComponent *grid = [[DataGridComponent alloc] initWithFrame:CGRectMake(0, 0, 500, 600) data:ds];
-        [ds release];
-        [self.view addSubview:grid];
-        [grid release];
-        [super viewDidLoad];
-    
-    
-       // 设置背景图片
+    // 设置背景图片
     UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
     
@@ -109,6 +70,40 @@ NSMutableArray* list;
     self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    CGRect parentSz = self.view.frame;
+    CGRect bds = [nb bounds];
+    float s = self.view.contentScaleFactor;
+
+    NALLabelsMatrix* matrix = [[NALLabelsMatrix alloc]
+                               initWithFrame:CGRectMake(0, bds.size.height, parentSz.size.height, parentSz.size.width - bds.size.height)
+                               andColumnsWidths:[[NSArray alloc] initWithObjects:@40, @100, @170, @170, @170, @120, nil]];
+    
+    [matrix addRecord:[[NSArray alloc] initWithObjects:@"编号", @"类型", @"正面", @"负面", @"我要", @"时间", nil]];
+    
+    for (sqlRecordList  *one in list) {
+        NSMutableArray *tmp = [[NSMutableArray alloc] init];
+        
+        [tmp addObject:[NSString stringWithFormat:@"%d",one.sqlid]];
+        [tmp addObject:one.seedName];
+        [tmp addObject:one.righttext];
+        [tmp addObject:one.wrongtext];
+        [tmp addObject:one.willtext];
+        [tmp addObject:one.addtime];
+        
+        [matrix addRecord:tmp];
+        [matrix addRecord:tmp];
+        [tmp release];
+    }
+    
+    [self.view addSubview:matrix];
+    [matrix release];
     
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
@@ -128,70 +123,6 @@ NSMutableArray* list;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -204,5 +135,6 @@ NSMutableArray* list;
 }
 
  */
+
 
 @end

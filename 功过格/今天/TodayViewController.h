@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface TodayViewController : UITableViewController
+@interface TodayViewController : ViewController
+{
+    IBOutlet UINavigationBar* nb;
+}
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
+
+
 @end

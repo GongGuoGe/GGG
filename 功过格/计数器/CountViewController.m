@@ -27,16 +27,10 @@
 
 - (void)viewDidLoad
 {
-    if(param){
-    
-        [_num setText:paramnum];
-    
-    
-    
-    }
-    
-    
     [super viewDidLoad];
+    
+    [_num setText:[NSString stringWithFormat:@"%d", paramnum]];
+    
     // 设置背景图片
         
     //设置手势操作
@@ -75,9 +69,9 @@
     CountSqlService   *sqlSer = [[CountSqlService alloc] init];
     [_num setText:[NSString stringWithFormat:@"%d",tmp]];
     sqlCountList *sqlInsert = [[sqlCountList alloc]init];
-    sqlInsert.countNum = [NSString stringWithFormat:@"%d",tmp];
+    sqlInsert.countNum = tmp;
     sqlInsert.countType = paramtype;
-    sqlInsert.sqlid    = [param intValue];
+    sqlInsert.sqlid    = param;
     [sqlSer updateTestList:sqlInsert];
     [sqlInsert release];
     [sqlSer release];
@@ -106,8 +100,6 @@
 }
 
 - (void)dealloc {
-    [_num release];
-    [_Taped release];
     [super dealloc];
 }
 @end

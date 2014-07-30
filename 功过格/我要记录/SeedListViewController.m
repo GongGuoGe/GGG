@@ -8,6 +8,9 @@
 
 #import "SeedListViewController.h"
 #import "SeedSQLService.h"
+#import "NewLogViewController.h"
+
+
 @interface SeedListViewController ()
 
 @end
@@ -44,16 +47,21 @@ NSMutableArray* seedList;
     
     
     //绑定TableView
-    _tableview.delegate=self;
-    _tableview.dataSource=self;
-    
-    SeedSQLService   *sqlSer = [[SeedSQLService alloc] init];
-    
-    
-    seedList= [sqlSer getTestList];
-
-    [sqlSer release];
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    SeedSQLService   *sqlSer = [[SeedSQLService alloc] init];
+    seedList= [sqlSer getTestList];
+    [sqlSer release];
+    
+    [self.tableView reloadData];
+    
+    param = -1;
+}
+
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
@@ -73,16 +81,12 @@ NSMutableArray* seedList;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    return [seedList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -166,35 +170,26 @@ NSMutableArray* seedList;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-     if(indexPath.row<seedList.count){
-    sqlSeedList *a=   [seedList objectAtIndex:indexPath.row];
-    
-    
-    NSLog(@"jumpingtoEdddit");
-    
-    NSString *str1 = [NSString stringWithFormat:@"%d",a.sqlid];
-    
-    
-    param=str1;
-    paramname=a.seedName;
-    if(param){
-       
-   
-             [self performSegueWithIdentifier:@"logListToNew" sender:self];
+    if(indexPath.row<seedList.count){
+        sqlSeedList *a=   [seedList objectAtIndex:indexPath.row];
+
+        NSLog(@"jumpingtoEdddit");
         
+        param = a.sqlid;
+        paramname = a.seedName;
+        [self performSegueWithIdentifier:@"logListToNew" sender:self];
     }
-     }
-    [UIView commitAnimations];
 }
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //
-    if(param){
-         if(param.length>0){
-        id segue2 = segue.destinationViewController;
-        [segue2 setValue:paramname forKey:@"param"];
-        [segue2 setValue:paramname forKey:@"paramname"];
-         }
+    if(param != -1){
+
+        NewLogViewController* segue2 = segue.destinationViewController;
+        segue2.param = param;
+        segue2.paramname = paramname;
     }
     
     
@@ -205,7 +200,6 @@ NSMutableArray* seedList;
 
 
 - (void)dealloc {
-    [_tableview release];
     [super dealloc];
 }
 @end

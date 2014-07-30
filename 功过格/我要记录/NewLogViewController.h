@@ -10,15 +10,15 @@
 
 @interface NewLogViewController : ViewController
 @property (strong, nonatomic) NSString *paramname;
-@property (strong, nonatomic) NSString *param;
+@property (assign) int param;
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
-@property (retain, nonatomic) IBOutlet UITextView *wrongtext;
+@property (assign, nonatomic) IBOutlet UITextView *wrongtext;
 
-@property (retain, nonatomic) IBOutlet UITextView *willtext;
+@property (assign, nonatomic) IBOutlet UITextView *willtext;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 
 - (IBAction)submit:(id)sender;
-@property (retain, nonatomic) IBOutlet UITextView *righttext;
+@property (assign, nonatomic) IBOutlet UITextView *righttext;
 - (IBAction)hiden:(id)sender;
 
 @end

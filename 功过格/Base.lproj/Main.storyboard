@@ -149,6 +149,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="GT4-CK-hxR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erO-TI-Ace" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="jtd-59-lm5"/>
@@ -184,9 +185,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <connections>
-                        <outlet property="tableview" destination="45B-F3-krS" id="iIe-kM-dZF"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="aY3-oj-vai"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ic1-Iy-Izt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="xhV-9D-kPC"/>
@@ -430,6 +429,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="YSj-yb-Gg7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SET-Fh-OYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="KKQ-SD-nk6">
@@ -492,7 +492,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2ZA-eu-PgW" kind="push" id="aA2-wJ-l0S"/>
+                                    <segue destination="9Ls-Wd-vNU" kind="modal" id="MKM-C3-4xK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="计数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-OD-IhG">
@@ -667,6 +667,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="ibv-4a-3Wi"/>
                     <connections>
                         <outlet property="bedText" destination="9re-oE-Z3W" id="YRT-Ao-LoJ"/>
                         <outlet property="bestText" destination="ke6-Am-o4v" id="Bfa-IX-ukI"/>
@@ -678,16 +679,55 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-521" y="1526"/>
         </scene>
-        <!--Today View Controller-->
+        <!--Today View Controller - Title-->
         <scene sceneID="XQA-Ug-PYT">
             <objects>
                 <tableViewController id="2ZA-eu-PgW" customClass="TodayViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Title" id="kxv-rd-tLD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdv-em-pJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="REH-gu-jRi"/>
             </objects>
-            <point key="canvasLocation" x="-521" y="893"/>
+            <point key="canvasLocation" x="-555" y="910"/>
+        </scene>
+        <!--Today View Controller-->
+        <scene sceneID="Ghm-wd-cId">
+            <objects>
+                <viewController id="9Ls-Wd-vNU" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PaK-Ft-NQd"/>
+                        <viewControllerLayoutGuide type="bottom" id="PIW-5L-3vy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mpP-WC-65G">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Epu-xH-GML">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="TOC-uI-gNW">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="FFy-uv-yxZ">
+                                            <connections>
+                                                <segue destination="hNA-cX-PSd" kind="modal" id="e83-dQ-KW6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="nb" destination="Epu-xH-GML" id="hQZ-Rg-zsy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e20-8w-KUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1861" y="272"/>
         </scene>
         <!--Set Main View Controller-->
         <scene sceneID="8m3-7v-d4d">
@@ -789,6 +829,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="lRS-iU-e6A"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnU-td-5uX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Q9N-Ye-3tl"/>
@@ -866,6 +907,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="HEe-v0-4cr"/>
                     <connections>
                         <outlet property="accout" destination="E3u-AZ-VSu" id="vXY-0n-kwZ"/>
                         <outlet property="passwd" destination="8Kh-Dp-lGF" id="qDu-PM-CqF"/>
@@ -901,6 +943,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="Z8t-mp-skU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3Q-nA-586" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="JUZ-33-64j">

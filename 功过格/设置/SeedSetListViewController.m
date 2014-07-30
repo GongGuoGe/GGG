@@ -58,6 +58,9 @@ NSMutableArray* seedList;
     
     SeedSQLService   *sqlSer = [[SeedSQLService alloc] init];
     seedList= [sqlSer getTestList];
+    [sqlSer release];
+    
+    
     [self.tableView reloadData];
     
     if (param)

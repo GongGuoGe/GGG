@@ -102,7 +102,7 @@
         l.text = [dataSource.titles objectAtIndex:column];
         l.backgroundColor =[UIColor clearColor];
         l.textColor = [UIColor whiteColor];
-        l.textAlignment = UITextAlignmentCenter;
+        l.textAlignment = NSTextAlignmentCenter;
         if( 0 == column) {
             [vTopLeft addSubview:l];
         } else {
@@ -120,7 +120,8 @@
             UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(columnOffset, i * cellHeight, columnWidth, cellHeight - 1)];
             l.font = [UIFont systemFontOfSize:12.0f];
             l.text = [rowData objectAtIndex:column];
-            l.textAlignment = UITextAlignmentCenter;
+            l.textAlignment = NSTextAlignmentCenter;
+            
             l.tag = i * cellHeight + column + 1000;
             l.backgroundColor=[UIColor grayColor];
             if(i % 2 == 0)
@@ -137,13 +138,13 @@
     }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    vTopRight.frame = CGRectMake(cellWidth, 0, vRight.contentSize.width, vTopRight.frame.size.height);
-    vTopRight.bounds = CGRectMake(scrollView.contentOffset.x, 0, vTopRight.frame.size.width, vTopRight.frame.size.height);
-    vTopRight.clipsToBounds = YES;
-    vRightContent.frame = CGRectMake(0, 0, vRight.contentSize.width, contentHeight);
-    [self addSubview:vTopRight];
-    vRight.frame = CGRectMake(cellWidth, 0, self.frame.size.width - cellWidth, vLeft.contentSize.height);
-    [vLeft addSubview:scrollView];
+//    vTopRight.frame = CGRectMake(cellWidth, 0, vRight.contentSize.width, vTopRight.frame.size.height);
+//    vTopRight.bounds = CGRectMake(scrollView.contentOffset.x, 0, vTopRight.frame.size.width, vTopRight.frame.size.height);
+//    vTopRight.clipsToBounds = YES;
+//    vRightContent.frame = CGRectMake(0, 0, vRight.contentSize.width, contentHeight);
+//    [self addSubview:vTopRight];
+//    vRight.frame = CGRectMake(cellWidth, 0, self.frame.size.width - cellWidth, vLeft.contentSize.height);
+//    [vLeft addSubview:scrollView];
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     scrollView.frame = CGRectMake(cellWidth, 0, scrollView.frame.size.width, self.frame.size.height);
@@ -151,7 +152,7 @@
     vTopRight.frame = CGRectMake(0, 0, vRight.contentSize.width, vTopRight.frame.size.height);
     vTopRight.bounds = CGRectMake(0, 0, vRight.contentSize.width, vTopRight.frame.size.height);
     [scrollView addSubview:vTopRight];
-    [self addSubview:scrollView];
+//    [self addSubview:scrollView];
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if(!decelerate)

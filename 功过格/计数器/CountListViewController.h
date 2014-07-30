@@ -11,10 +11,7 @@
 @interface CountListViewController : UITableViewController
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
-@property (retain, nonatomic) IBOutlet UITableView *tables;
-
-@property (retain, nonatomic) IBOutlet UITableView *tableViews;
 @property (strong, nonatomic) NSString *paramtype;
-@property (strong, nonatomic) NSString *paramnum;
-@property (strong, nonatomic) NSString *param;
+@property (assign) int paramnum;
+@property (assign) int param;
 @end

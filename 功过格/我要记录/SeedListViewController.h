@@ -11,8 +11,7 @@
 @interface SeedListViewController : UITableViewController
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
-@property (retain, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 @property (strong, nonatomic) NSString *paramname;
-@property (strong, nonatomic) NSString *param;
+@property (assign) int param;
 @end
