@@ -135,7 +135,6 @@
 		532F63B418B5B3D900ECD810 /* ExpTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 532F63B318B5B3D900ECD810 /* ExpTestController.m */; };
 		5339BE4418B2DE0C00124336 /* HisSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5339BE4318B2DE0C00124336 /* HisSearch.m */; };
 		5339BE4718B2E89900124336 /* ShowHis.m in Sources */ = {isa = PBXBuildFile; fileRef = 5339BE4618B2E89900124336 /* ShowHis.m */; };
-		5339BE4D18B2FC1D00124336 /* DataGridComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5339BE4C18B2FC1D00124336 /* DataGridComponent.m */; };
 		5382E0AA18B6DE5500E8F480 /* ExpSeedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382E0A918B6DE5500E8F480 /* ExpSeedList.m */; };
 		5382E0AD18B6E24600E8F480 /* SelectDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382E0AC18B6E24600E8F480 /* SelectDate.m */; };
 		5382E0B818B6EE1800E8F480 /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382E0AE18B6EE1800E8F480 /* Base64Transcoder.m */; };
@@ -278,8 +277,6 @@
 		5339BE4318B2DE0C00124336 /* HisSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisSearch.m; sourceTree = "<group>"; };
 		5339BE4518B2E89900124336 /* ShowHis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowHis.h; sourceTree = "<group>"; };
 		5339BE4618B2E89900124336 /* ShowHis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowHis.m; sourceTree = "<group>"; };
-		5339BE4B18B2FC1D00124336 /* DataGridComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataGridComponent.h; sourceTree = "<group>"; };
-		5339BE4C18B2FC1D00124336 /* DataGridComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataGridComponent.m; sourceTree = "<group>"; };
 		5382E0A818B6DE5500E8F480 /* ExpSeedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpSeedList.h; sourceTree = "<group>"; };
 		5382E0A918B6DE5500E8F480 /* ExpSeedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpSeedList.m; sourceTree = "<group>"; };
 		5382E0AB18B6E24600E8F480 /* SelectDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDate.h; sourceTree = "<group>"; };
@@ -574,8 +571,6 @@
 				71A384C91988D6A500444ABD /* NALLabelsMatrix.m */,
 				18C0C41C18B0E1F900307981 /* TodayViewController.h */,
 				18C0C41D18B0E1F900307981 /* TodayViewController.m */,
-				5339BE4B18B2FC1D00124336 /* DataGridComponent.h */,
-				5339BE4C18B2FC1D00124336 /* DataGridComponent.m */,
 			);
 			path = "今天";
 			sourceTree = "<group>";
@@ -830,7 +825,6 @@
 				5382E0B818B6EE1800E8F480 /* Base64Transcoder.m in Sources */,
 				18C0C40118B0E18A00307981 /* BestViewController.m in Sources */,
 				18C0C36418B0E0AF00307981 /* EditDelCount.m in Sources */,
-				5339BE4D18B2FC1D00124336 /* DataGridComponent.m in Sources */,
 				18C0C3FD18B0E18A00307981 /* SeedListViewController.m in Sources */,
 				18C0C44A18B0E1F900307981 /* UIView+convenience.m in Sources */,
 				71A384C719889A1400444ABD /* UINavC.m in Sources */,

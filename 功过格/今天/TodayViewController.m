@@ -46,17 +46,6 @@ NSMutableArray* list;
     list= [sqlSer  getThisDay:sqlInsert];
     [sqlSer release];
     [dateFormatter release];
-    
-//    DataGridComponentDataSource* ds = [[DataGridComponentDataSource alloc] init];
-//    ds.columnWidth = [NSMutableArray arrayWithObjects:@"40", @"100", @"170", @"170", @"170", @"120", @"70", nil];
-//    ds.titles = [NSMutableArray arrayWithObjects:@"编号", @"类型", @"正面", @"负面", @"我要", @"时间", nil];
-//    ds.data = dates;
-//    
-//    CGRect bds = [nb bounds];
-//    DataGridComponent *grid = [[DataGridComponent alloc] initWithFrame:CGRectMake(0, bds.size.height, 500, 600 - bds.size.height) data:ds];
-//    [ds release];
-//    [self.view addSubview:grid];
-//    [grid release];
 
     // 设置背景图片
     UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
@@ -76,13 +65,24 @@ NSMutableArray* list;
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //    NSMutableArray *dates = [[NSMutableArray alloc] init];
-    CGRect parentSz = self.view.frame;
+    
+    CGRect parentSz = self.view.bounds;
     CGRect bds = [nb bounds];
-    float s = self.view.contentScaleFactor;
+    bds.size.width = parentSz.size.width;
+    [nb setBounds:bds];
 
+    CGRect matrixSz;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
+    {
+        matrixSz = CGRectMake(0, bds.size.height + 10, parentSz.size.width, parentSz.size.height - bds.size.height);
+    }
+    else
+    {
+        matrixSz = CGRectMake(0, bds.size.height - 10, parentSz.size.width, parentSz.size.height - bds.size.height);
+    }
+    
     NALLabelsMatrix* matrix = [[NALLabelsMatrix alloc]
-                               initWithFrame:CGRectMake(0, bds.size.height, parentSz.size.height, parentSz.size.width - bds.size.height)
+                               initWithFrame:matrixSz
                                andColumnsWidths:[[NSArray alloc] initWithObjects:@40, @100, @170, @170, @170, @120, nil]];
     
     [matrix addRecord:[[NSArray alloc] initWithObjects:@"编号", @"类型", @"正面", @"负面", @"我要", @"时间", nil]];
@@ -98,13 +98,11 @@ NSMutableArray* list;
         [tmp addObject:one.addtime];
         
         [matrix addRecord:tmp];
-        [matrix addRecord:tmp];
         [tmp release];
     }
     
     [self.view addSubview:matrix];
     [matrix release];
-    
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -135,6 +133,5 @@ NSMutableArray* list;
 }
 
  */
-
 
 @end

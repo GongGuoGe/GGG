@@ -25,6 +25,7 @@
         }
         
         self.scrollEnabled = TRUE;
+        NSLog(@"fame: %f,%f", frame.size.width, frame.size.height);
         self.frame = frame;
         self.contentSize = CGSizeMake(w, 1);
         self.alwaysBounceHorizontal = TRUE;
@@ -77,6 +78,11 @@
             style.alignment = NSTextAlignmentCenter;
 			col1.backgroundColor = [UIColor colorWithWhite:0.961 alpha:1.000];
         }
+        else
+        {
+            style.alignment = NSTextAlignmentCenter;
+            col1.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+        }
 		
 		
 		NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:[record objectAtIndex:i] attributes:@{ NSParagraphStyleAttributeName : style}];
@@ -124,10 +130,10 @@
 	//RESIZE THE MAIN VIEW TO FIT THE ROWS
 	CGRect tempRect = self.frame;
 	tempRect.size.height = dy;
-	self.frame = tempRect;
+//	self.frame = tempRect;
     
     CGSize fz = self.contentSize;
-    fz.height = dy;
+    fz.height = dy + self->numRows;
     self.contentSize = fz;
 }
 

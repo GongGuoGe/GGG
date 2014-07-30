@@ -11,4 +11,7 @@
 @interface MainViewController : ViewController
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
+
+-(IBAction)onToday:(id)sender;
+
 @end
