@@ -70,17 +70,5 @@
 } 
 
 
--(IBAction)onToday:(id)sender
-{
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
-    {
-        [self performSegueWithIdentifier:@"mainToTodayIos7" sender:self];
-    }
-    else
-    {
-        [self performSegueWithIdentifier:@"mainToTodayIos6" sender:self];
-    }
-}
-
 
 @end
