@@ -54,7 +54,7 @@
   
     [[self view] addGestureRecognizer:oneFingerTwoTaps];
 
-
+    self.navigationItem.title = NSLocalizedString(@"counter", nil);
 }
 
 

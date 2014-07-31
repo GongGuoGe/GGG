@@ -63,6 +63,16 @@ NSMutableArray* seedList;
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
     [super viewDidLoad];
+    
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:NSLocalizedString(@"home", nil)
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
+    
+    self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
+    self.navigationItem.title = param;
 }
 
 
@@ -219,5 +229,10 @@ NSMutableArray* seedList;
 
 - (void)dealloc {
     [super dealloc];
+}
+
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
 }
 @end

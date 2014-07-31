@@ -85,7 +85,7 @@ NSMutableArray* list;
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"右边" style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton)];
     
     //设置导航栏的内容
-    [navItem setTitle:@"凌凌漆"];
+    navItem.title = NSLocalizedString(@"today", nil);
     
     //把导航栏集合添加到导航栏中，设置动画关闭
     [navBar pushNavigationItem:navItem animated:NO];

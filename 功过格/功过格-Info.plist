@@ -35,5 +35,7 @@
 		<string>GwuengGwuoGe</string>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 </dict>
 </plist>

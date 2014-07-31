@@ -46,7 +46,7 @@ NSMutableArray* seedList;
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
-
+    self.navigationItem.title = NSLocalizedString(@"selectDate", nil);
 }
 
 

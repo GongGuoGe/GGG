@@ -38,12 +38,16 @@
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
     UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
-                                initWithTitle:@"主页"
+                                initWithTitle:NSLocalizedString(@"home", nil)
                                 style:UIBarButtonItemStyleBordered
                                 target:self
                                 action:@selector(onHome:)];
-    
+
     self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
+    
+    self.navigationItem.title = NSLocalizedString(@"setting", nil);
+
 }
 
 

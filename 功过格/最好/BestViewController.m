@@ -52,6 +52,7 @@
     _wantText.layer.borderWidth =1.0;
     _wantText.layer.cornerRadius =5.0;
     
+    self.navigationItem.title = NSLocalizedString(@"best", nil);
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {

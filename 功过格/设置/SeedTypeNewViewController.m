@@ -42,7 +42,16 @@
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:NSLocalizedString(@"home", nil)
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
     
+    self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
+    
+    self.navigationItem.title = NSLocalizedString(@"seedNew", nil);
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -87,4 +96,10 @@
     
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil]; 
 }
+
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
+}
+
 @end

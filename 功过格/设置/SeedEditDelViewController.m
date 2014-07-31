@@ -55,8 +55,16 @@
     
     [super viewDidLoad];
     
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:NSLocalizedString(@"home", nil)
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
     
+    self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
 
+    self.navigationItem.title = NSLocalizedString(@"seedEdit", nil);
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -114,6 +122,11 @@
 
 - (IBAction)hiden:(id)sender {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
 }
 
 @end

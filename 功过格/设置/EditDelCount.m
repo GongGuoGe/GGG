@@ -49,9 +49,16 @@
     
        
     
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:NSLocalizedString(@"home", nil)
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
     
+    self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
     
-	// Do any additional setup after loading the view.
+    self.navigationItem.title = NSLocalizedString(@"counterEdit", nil);
 }
 
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
@@ -105,5 +112,10 @@
     [self.navigationController popViewControllerAnimated:TRUE];
 
     
+}
+
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
 }
 @end

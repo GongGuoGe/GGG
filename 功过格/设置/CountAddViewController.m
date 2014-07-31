@@ -46,7 +46,16 @@
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
-   
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:NSLocalizedString(@"home", nil)
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
+    
+    self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
+    
+    self.navigationItem.title = NSLocalizedString(@"counterNew", nil);
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -73,7 +82,7 @@
 - (IBAction)Add:(id)sender {
     CountSqlService   *sqlSer = [[CountSqlService alloc] init];
     sqlCountList *sqlInsert = [[sqlCountList alloc]init];
-    sqlInsert.countNum = _countNum.text;
+    sqlInsert.countNum = [_countNum.text intValue];
     sqlInsert.countType = _countName.text;
     
     //调用封装好的数据库插入函数
@@ -101,4 +110,11 @@
 - (IBAction)HiddenKey:(id)sender {
        [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil]; 
 }
+
+
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
+}
+
 @end

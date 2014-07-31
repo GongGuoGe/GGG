@@ -12,7 +12,6 @@
 @property (retain, nonatomic) IBOutlet UITextView *rightttext;
 @property (retain, nonatomic) IBOutlet UITextView *wrongtext;
 @property (retain, nonatomic) IBOutlet UITextView *willtext;
-@property (retain, nonatomic) IBOutlet UILabel *seedname;
 
 @property (retain, nonatomic) IBOutlet UILabel *addtime;
 

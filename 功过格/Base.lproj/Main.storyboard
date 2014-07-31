@@ -152,7 +152,11 @@
                     <navigationItem key="navigationItem" id="GT4-CK-hxR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erO-TI-Ace" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="jtd-59-lm5"/>
+                <swipeGestureRecognizer direction="right" id="jtd-59-lm5">
+                    <connections>
+                        <segue destination="JpQ-PF-i2P" kind="push" identifier="counterToAddNew" id="UOg-6b-8Pe"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="Lgd-fa-hOa">
                     <connections>
                         <segue destination="BpA-ge-bLR" kind="push" identifier="CountListToDetail" id="XSy-1t-xI4"/>
@@ -188,7 +192,11 @@
                     <navigationItem key="navigationItem" id="aY3-oj-vai"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ic1-Iy-Izt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="xhV-9D-kPC"/>
+                <swipeGestureRecognizer direction="right" id="xhV-9D-kPC">
+                    <connections>
+                        <segue destination="XTV-o5-DBA" kind="push" identifier="writeToAddSeed" id="zH6-Vs-Jnn"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="fEG-S5-kBp">
                     <connections>
                         <segue destination="ddM-wf-YUk" kind="push" identifier="logListToNew" id="fFl-VW-wzY"/>
@@ -245,58 +253,52 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-6x-bV1">
-                                <rect key="frame" x="20" y="63" width="42" height="27"/>
+                                <rect key="frame" x="20" y="23" width="42" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="负面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-87-Osc">
-                                <rect key="frame" x="20" y="183" width="42" height="21"/>
+                                <rect key="frame" x="20" y="143" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我要" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pj-mV-76A">
-                                <rect key="frame" x="20" y="306" width="42" height="21"/>
+                                <rect key="frame" x="20" y="266" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " translatesAutoresizingMaskIntoConstraints="NO" id="HAf-0j-90T">
-                                <rect key="frame" x="84" y="63" width="210" height="105"/>
+                                <rect key="frame" x="84" y="23" width="210" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " translatesAutoresizingMaskIntoConstraints="NO" id="OeC-rS-DMp">
-                                <rect key="frame" x="84" y="183" width="210" height="105"/>
+                                <rect key="frame" x="84" y="143" width="210" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " translatesAutoresizingMaskIntoConstraints="NO" id="SUr-5W-nc3">
-                                <rect key="frame" x="84" y="306" width="210" height="104"/>
+                                <rect key="frame" x="84" y="266" width="210" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caj-Lb-Zae">
-                                <rect key="frame" x="70" y="438" width="180" height="54"/>
+                                <rect key="frame" x="70" y="378" width="180" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCP-Id-j2h">
-                                <rect key="frame" x="74" y="9" width="173" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -309,7 +311,6 @@
                     <connections>
                         <outlet property="addtime" destination="caj-Lb-Zae" id="0Tb-9F-Pts"/>
                         <outlet property="rightttext" destination="HAf-0j-90T" id="2N6-zf-a7N"/>
-                        <outlet property="seedname" destination="WCP-Id-j2h" id="pRy-6e-nTn"/>
                         <outlet property="willtext" destination="SUr-5W-nc3" id="EDl-9f-p8l"/>
                         <outlet property="wrongtext" destination="OeC-rS-DMp" id="QT5-bB-gKc"/>
                     </connections>
@@ -1057,6 +1058,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="zUM-eB-UhD"/>
                     <connections>
                         <outlet property="seedName" destination="Bn7-D6-Fin" id="d3y-ad-DVd"/>
                     </connections>
@@ -1239,6 +1241,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="70a-vC-v4M"/>
                     <connections>
                         <outlet property="countName" destination="rhg-Ry-TSf" id="YnH-KK-whP"/>
                         <outlet property="countNum" destination="jbC-3T-i5x" id="DBX-jP-Og5"/>
@@ -1291,4 +1294,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zH6-Vs-Jnn"/>
+        <segue reference="UOg-6b-8Pe"/>
+    </inferredMetricsTieBreakers>
 </document>

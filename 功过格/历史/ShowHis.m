@@ -7,6 +7,8 @@
 //
 
 #import "ShowHis.h"
+#import "UMSocial.h"
+
 
 @interface ShowHis ()
 
@@ -33,14 +35,10 @@
 {
     
     if(param){
-        [_seedname setText:seddnamevalue];
         [_addtime setText:addtimevalue];
         [_rightttext setText:right];
         [_wrongtext setText:wrong];
         [_willtext setText:will];
-    
-    
-    
     }
     
     
@@ -48,6 +46,9 @@
     UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
     
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(onShare:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    [rightItem release];
     
     //设置手势操作
     
@@ -59,6 +60,8 @@
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
     
     [super viewDidLoad];
+    
+    self.navigationItem.title = seddnamevalue;
 }
 
 
@@ -100,8 +103,20 @@
     [_rightttext release];
     [_wrongtext release];
     [_willtext release];
-    [_seedname release];
     [_addtime release];
     [super dealloc];
 }
+
+
+- (void)onShare:(id)sender
+{
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"53d9e03756240b5b54000210"
+                                      shareText:@"你要分享的文字"
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSms, UMShareToEmail/*, UMShareToWechatSession, UMShareToSina, UMShareToTencent*/,nil]
+                                       delegate:nil];
+}
+
+
 @end

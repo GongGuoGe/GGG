@@ -50,6 +50,17 @@ NSMutableArray* counterList;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    UIBarButtonItem* btnNew = [[UIBarButtonItem alloc]
+                               initWithTitle:NSLocalizedString(@"addNew", nil)
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(onNew:)];
+    
+    self.navigationItem.rightBarButtonItem = btnNew;
+    [btnNew release];
+    
+    self.navigationItem.title = NSLocalizedString(@"counterSetting", nil);
 }
 
 
@@ -225,4 +236,11 @@ NSMutableArray* counterList;
 - (void)dealloc {
     [super dealloc];
 }
+
+
+-(void)onNew:(id)sender
+{
+    [self performSegueWithIdentifier:@"toAddCountType" sender:self];
+}
+
 @end

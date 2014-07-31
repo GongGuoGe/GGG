@@ -1,2 +1,9 @@
-/* Localized versions of Info.plist keys */
+/* 
+  InfoPlist.strings
+  功过格
 
+  Created by Ray M on 14-7-31.
+  Copyright (c) 2014年 powerplayer. All rights reserved.
+*/
+
+CFBundleDisplayName ="GongGuoGe";

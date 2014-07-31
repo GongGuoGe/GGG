@@ -48,7 +48,18 @@
     [_accout setText:[data objectForKey:@"accout"]];
     [_passwd setText:[data objectForKey:@"passwd"]];
     [_smtp setText:[data objectForKey:@"smtp"]];
+    
+    UIBarButtonItem *btnHome = [[UIBarButtonItem alloc]
+                                initWithTitle:NSLocalizedString(@"home", nil)
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(onHome:)];
+
+    self.navigationItem.rightBarButtonItem = btnHome;
+    [btnHome release];
   
+    self.navigationItem.title = NSLocalizedString(@"mailSetting", nil);
+
 }
 
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
@@ -85,4 +96,11 @@
 
     [super dealloc];
 }
+
+
+-(void)onHome:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
+}
+
 @end

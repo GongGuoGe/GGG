@@ -43,6 +43,8 @@
     self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
+    
+    self.navigationItem.title = NSLocalizedString(@"history", nil);
 }
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {

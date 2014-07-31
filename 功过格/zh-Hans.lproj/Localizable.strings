@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  功过格
+
+  Created by Ray M on 14-7-31.
+  Copyright (c) 2014年 powerplayer. All rights reserved.
+*/
+
+"home" = "主页";
+"addNew" = "添加";
+"setting" = "设置";
+"seedSetting" = "种子设置";
+"seedEdit" = "编辑种子";
+"seedNew" = "新建种子";
+"counterSetting" = "计数器设置";
+"counterEdit" = "编辑计数器";
+"counterNew" = "新建计数器";
+"mailSetting" = "邮箱设置";
+"best" = "最好";
+"today" = "今天";
+"counters" = "计数器";
+"counter" = "计数";
+"history" = "历史";
+"write" = "我要记录";
+"export" = "导出";
+"selectDate" = "选择日期";

@@ -49,6 +49,17 @@ NSMutableArray* seedList;
     //绑定TableView
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
+    
+    UIBarButtonItem* btnNew = [[UIBarButtonItem alloc]
+                               initWithTitle:NSLocalizedString(@"addNew", nil)
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(onNew:)];
+    
+    self.navigationItem.rightBarButtonItem = btnNew;
+    [btnNew release];
+    
+    self.navigationItem.title = NSLocalizedString(@"write", nil);
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -202,4 +213,11 @@ NSMutableArray* seedList;
 - (void)dealloc {
     [super dealloc];
 }
+
+
+-(void)onNew:(id)sender
+{
+    [self performSegueWithIdentifier:@"writeToAddSeed" sender:self];
+}
+
 @end

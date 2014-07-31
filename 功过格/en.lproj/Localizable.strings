@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  功过格
+
+  Created by Ray M on 14-7-31.
+  Copyright (c) 2014年 powerplayer. All rights reserved.
+*/
+
+"home" = "Home";
+"addNew" = "New";
+"setting" = "Setting";
+"seedSetting" = "Seeds";
+"seedEdit" = "Seed edtior";
+"seedNew" = "New seed";
+"counterSetting" = "Counters";
+"counterEdit" = "Counter edtior";
+"counterNew" = "New counter";
+"mailSetting" = "Mail";
+"best" = "Best";
+"today" = "Today";
+"counters" = "Counters";
+"counter" = "Counter";
+"history" = "History";
+"write" = "Write";
+"export" = "Export";
+"selectDate" = "Select date";

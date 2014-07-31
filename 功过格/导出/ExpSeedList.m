@@ -56,6 +56,9 @@ NSMutableArray* seedList;
     seedList= [sqlSer getTestList];
     
     [sqlSer release];
+    
+    self.navigationItem.title = NSLocalizedString(@"export", nil);
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

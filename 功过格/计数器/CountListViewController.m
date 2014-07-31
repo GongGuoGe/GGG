@@ -47,6 +47,17 @@ NSMutableArray* counterList;
     
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
+    
+    UIBarButtonItem* btnNew = [[UIBarButtonItem alloc]
+                               initWithTitle:NSLocalizedString(@"addNew", nil)
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(onNew:)];
+    
+    self.navigationItem.rightBarButtonItem = btnNew;
+    [btnNew release];
+    
+    self.navigationItem.title = NSLocalizedString(@"counters", nil);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -56,6 +67,7 @@ NSMutableArray* counterList;
     CountSqlService *sqlSer = [[CountSqlService alloc] init];
     counterList= [sqlSer getTestList];
     [sqlSer release];
+    [self.tableView reloadData];
     param = -1;
 }
 
@@ -147,6 +159,11 @@ NSMutableArray* counterList;
 
 - (void)dealloc {
     [super dealloc];
+}
+
+-(void)onNew:(id)sender
+{
+    [self performSegueWithIdentifier:@"counterToAddNew" sender:self];
 }
 @end
 
