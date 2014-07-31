@@ -67,18 +67,50 @@ NSMutableArray* list;
     [super viewWillAppear:animated];
     
     CGRect parentSz = self.view.bounds;
-    CGRect bds = [nb bounds];
-    bds.size.width = parentSz.size.width;
-    [nb setBounds:bds];
+    //创建一个导航栏
+    CGRect navBarSize = CGRectMake(0, 0, parentSz.size.width, 44);
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
+    {
+        navBarSize.origin.y += 20;
+    }
+    UINavigationBar* navBar = [[UINavigationBar alloc] initWithFrame:navBarSize];
+    //创建一个导航栏集合
+    UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
+    //在这个集合Item中添加标题，按钮
+    //style:设置按钮的风格，一共有三种选择
+    //action：@selector:设置按钮的点击事件
+    //创建一个左边按钮
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(clickLeftButton:)];
+    //创建一个右边按钮
+//    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"右边" style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton)];
+    
+    //设置导航栏的内容
+    [navItem setTitle:@"凌凌漆"];
+    
+    //把导航栏集合添加到导航栏中，设置动画关闭
+    [navBar pushNavigationItem:navItem animated:NO];
+    
+    //把左右两个按钮添加到导航栏集合中去
+    [navItem setLeftBarButtonItem:leftButton];
+//    [navItem setRightBarButtonItem:rightButton];
+    
+    //将标题栏中的内容全部添加到主视图当中
+    [self.view addSubview:navBar];
+    
+    //最后将控件在内存中释放掉，以避免内存泄露
+    [navBar release];
+    [navItem release];
+    [leftButton release];
+//    [rightButton release];
 
     CGRect matrixSz;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
     {
-        matrixSz = CGRectMake(0, bds.size.height + 10, parentSz.size.width, parentSz.size.height - bds.size.height);
+        matrixSz = CGRectMake(0, navBarSize.size.height + 20, parentSz.size.width, parentSz.size.height - navBarSize.size.height);
     }
     else
     {
-        matrixSz = CGRectMake(0, bds.size.height - 10, parentSz.size.width, parentSz.size.height - bds.size.height);
+        matrixSz = CGRectMake(0, navBarSize.size.height, parentSz.size.width, parentSz.size.height - navBarSize.size.height);
     }
     
     NALLabelsMatrix* matrix = [[NALLabelsMatrix alloc]
@@ -121,6 +153,11 @@ NSMutableArray* list;
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)clickLeftButton:(id)sender
+{
+    [self performSegueWithIdentifier:@"backToMain" sender:self];
+}
 
 /*
 #pragma mark - Navigation

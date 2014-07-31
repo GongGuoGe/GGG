@@ -11,9 +11,9 @@
 
 @interface TodayViewController : ViewController
 {
-    IBOutlet UINavigationBar* nb;
 }
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 
+-(void)clickLeftButton:(id)sender;
 @end
