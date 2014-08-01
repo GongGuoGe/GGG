@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetMailController : UIViewController
+@interface SetMailController : UIViewController<UITextFieldDelegate>
+{
+    float oldY;
+    float kbHeight;
+}
+
 @property (assign, nonatomic) IBOutlet UITextField *accout;
 @property (assign, nonatomic) IBOutlet UITextField *passwd;
 @property (assign, nonatomic) IBOutlet UITextField *smtp;

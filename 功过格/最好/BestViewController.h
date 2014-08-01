@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
-@interface BestViewController : ViewController
+@interface BestViewController : ViewController<UITextViewDelegate>
+{
+    float oldY;
+    float kbHeight;
+}
 @property (retain, nonatomic) IBOutlet UITextView *bestText;
 @property (retain, nonatomic) IBOutlet UITextView *bedText;
 @property (retain, nonatomic) IBOutlet UITextView *wantText;

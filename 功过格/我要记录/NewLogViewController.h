@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
-@interface NewLogViewController : ViewController
+@interface NewLogViewController : ViewController<UITextViewDelegate>
+{
+    float oldY;
+    float kbHeight;
+}
 @property (strong, nonatomic) NSString *paramname;
 @property (assign) int param;
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
