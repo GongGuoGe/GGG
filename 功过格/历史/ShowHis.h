@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "UMSocial.h"
 
-@interface ShowHis : ViewController
+
+@interface ShowHis : ViewController<UMSocialUIDelegate>
 @property (retain, nonatomic) IBOutlet UITextView *rightttext;
 @property (retain, nonatomic) IBOutlet UITextView *wrongtext;
 @property (retain, nonatomic) IBOutlet UITextView *willtext;

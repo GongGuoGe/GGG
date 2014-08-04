@@ -28,9 +28,9 @@
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"53d9e03756240b5b54000210"];
     
-//    //设置微信AppId，设置分享url，默认使用友盟的网址
-//    [UMSocialWechatHandler setWXAppId:@"wxd9a39c7122aa6516" url:@"http://www.umeng.com/social"];
-//    
+    //设置微信AppId，设置分享url，默认使用友盟的网址
+    [UMSocialWechatHandler setWXAppId:@"wxbef3c194b573144b" url:@"http://www.umeng.com/social"];
+    
 //    //打开新浪微博的SSO开关
 //    [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
 //    
@@ -79,4 +79,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
 @end

@@ -119,7 +119,7 @@
 		sqlite3_stmt *statement;
 		
 		//这个 sql 语句特别之处在于 values 里面有个? 号。在sqlite3_prepare函数里，?号表示一个未定的值，它的值等下才插入。
-		static char *sql = "INSERT INTO RecordTable(righttext,wrongtext,willtext,seedName,addtime) VALUES(?,?,?,?,datetime('now'))";
+		static char *sql = "INSERT INTO RecordTable(righttext,wrongtext,willtext,seedName,addtime) VALUES(?,?,?,?,datetime('now', 'localtime'))";
 		
 		int success2 = sqlite3_prepare_v2(_database, sql, -1, &statement, NULL);
 		if (success2 != SQLITE_OK) {
