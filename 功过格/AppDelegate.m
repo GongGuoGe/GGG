@@ -15,6 +15,7 @@
 #import "UMSocialRenrenHandler.h"
 //#import "UMSocialQQHandler.h"
 
+#define kFilename  @"Gongguoge.db"
 
 @implementation AppDelegate
 
@@ -49,6 +50,17 @@
     //设置facebook应用ID，和分享纯文字用到的url地址
     //    [UMSocialFacebookHandler setFacebookAppID:@"91136964205" shareFacebookWithURL:@"http://www.umeng.com/social"];
     
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString* fn = [documentsDirectory stringByAppendingPathComponent:kFilename];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL found = [fileManager fileExistsAtPath:fn];
+    if (!found)
+    {
+        NSString *filePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:kFilename];
+        [fileManager copyItemAtPath:filePath toPath:fn error:nil];
+    }
     return YES;
 }
 							

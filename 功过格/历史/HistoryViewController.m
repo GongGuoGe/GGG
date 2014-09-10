@@ -64,7 +64,7 @@
     //用[NSDate date]可以获取系统当前时间
     RecordSQLService   *sqlSer = [[RecordSQLService alloc] init];
     sqlRecordList *sqlInsert = [[sqlRecordList alloc]init];
-    sqlInsert.addtime= [dateFormatter stringFromDate:[NSDate date]];
+    sqlInsert.addtime= [dateFormatter stringFromDate:[calendarView currentMonth]];
     NSMutableArray *array= [sqlSer getThisMon:sqlInsert];
 
     NSCalendar *cal = [[NSCalendar alloc] init];

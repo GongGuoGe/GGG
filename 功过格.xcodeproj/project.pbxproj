@@ -336,6 +336,7 @@
 		5382E0DD18B71BF000E8F480 /* PMSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSelectionView.m; sourceTree = "<group>"; };
 		538961D918B1D4E700AC2CC4 /* RecordSQLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSQLService.h; sourceTree = "<group>"; };
 		538961DA18B1D4E700AC2CC4 /* RecordSQLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSQLService.m; sourceTree = "<group>"; };
+		7189A34019C090D000A5FC82 /* Gongguoge.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = Gongguoge.db; path = "功过格/Gongguoge.db"; sourceTree = "<group>"; };
 		71A384C519889A1400444ABD /* UINavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UINavC.h; path = "功过格/UINavC.h"; sourceTree = "<group>"; };
 		71A384C619889A1400444ABD /* UINavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINavC.m; path = "功过格/UINavC.m"; sourceTree = "<group>"; };
 		71A384C81988D6A500444ABD /* NALLabelsMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NALLabelsMatrix.h; sourceTree = "<group>"; };
@@ -420,6 +421,7 @@
 		18C0C2B118B0DF8400307981 = {
 			isa = PBXGroup;
 			children = (
+				7189A34019C090D000A5FC82 /* Gongguoge.db */,
 				71A5E70E198A34C80085078D /* Localizable.strings */,
 				71A5E707198A33A60085078D /* InfoPlist.strings */,
 				71A5E6DE198A164E0085078D /* UMSocial_Sdk_Extra_Frameworks */,
@@ -1224,12 +1226,15 @@
 		18C0C2ED18B0DF8400307981 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Zhang (M6N28R69TK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Zhang (M6N28R69TK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Renren",
@@ -1260,12 +1265,15 @@
 		18C0C2EE18B0DF8400307981 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Zhang (M6N28R69TK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Zhang (M6N28R69TK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Renren",
