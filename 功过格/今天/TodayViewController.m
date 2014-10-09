@@ -18,12 +18,17 @@
 NSMutableArray* list;
 @synthesize rightSwipeGestureRecognizer,leftSwipeGestureRecognizer;
 
-
-- (NSUInteger)supportedInterfaceOrientations
+- (BOOL)shouldAutorotate
 {
-    //    return UIInterfaceOrientationMaskLandscapeLeft;
-    return UIInterfaceOrientationMaskLandscapeRight;
+    return FALSE;
 }
+
+
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    //    return UIInterfaceOrientationMaskLandscapeLefƒt;
+//    return UIInterfaceOrientationMaskAllButUpsideDown;
+//}
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
    return UIInterfaceOrientationLandscapeRight;
@@ -34,7 +39,7 @@ NSMutableArray* list;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     RecordSQLService   *sqlSer = [[RecordSQLService alloc] init];
     sqlRecordList *sqlInsert = [[sqlRecordList alloc]init];
     
@@ -67,6 +72,12 @@ NSMutableArray* list;
     [super viewWillAppear:animated];
     
     CGRect parentSz = self.view.bounds;
+    if (parentSz.size.width < parentSz.size.height)
+    {
+        float temp = parentSz.size.width;
+        parentSz.size.width = parentSz.size.height;
+        parentSz.size.height = temp;
+    }
     //创建一个导航栏
     CGRect navBarSize = CGRectMake(0, 0, parentSz.size.width, 44);
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
